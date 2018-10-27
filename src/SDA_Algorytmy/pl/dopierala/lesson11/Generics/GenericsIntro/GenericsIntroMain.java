@@ -9,8 +9,9 @@ public class GenericsIntroMain {
 
     public static void main(String[] args) {
         //System.out.println(findGeneric(intArray, 3).get());
+        int a=3;
         findGeneric(stringArray, "Ala").ifPresent(System.out::println);
-        findGeneric(intArray, 3).ifPresent(elm -> System.out.println(elm));
+        findGeneric(intArray, 3).ifPresent(System.out::println);
     }
 
     public static <T extends Object> Optional<T> findGeneric(T[] array, T element){

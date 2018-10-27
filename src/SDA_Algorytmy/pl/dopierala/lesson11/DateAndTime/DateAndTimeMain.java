@@ -14,7 +14,7 @@ public class DateAndTimeMain {
         System.out.println("Dzisiaj mamy:"+actualDate.format(formater));
         System.out.println("Wypadek miałem :"+ accident.format(formater));
 
-        System.out.println(Duration.between(accident,actualDate).toDays());
+        System.out.println("To było "+Duration.between(accident,actualDate).toDays()+" dni temu.");
 
     }
 }

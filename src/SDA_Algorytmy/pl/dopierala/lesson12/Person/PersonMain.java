@@ -15,6 +15,7 @@ public class PersonMain {
 
 
         QuickSortMain.quickSortComparator(persons,0,persons.length-1, Comparator.comparing(o -> o.name));
+        QuickSortMain.quickSortComparator(persons,0,persons.length-1, (o1,o2)->o1.name.compareTo(o2.name));
         System.out.println(Arrays.toString(persons));
         System.out.println(persons);
     }

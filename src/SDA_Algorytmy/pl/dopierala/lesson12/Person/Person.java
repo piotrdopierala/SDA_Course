@@ -38,6 +38,6 @@ public class Person implements Comparable<Person> {
             return this.lastname.compareTo(o.lastname);
         if(sortType==2)
             return this.birthdate.compareTo(o.birthdate);
-        return 0;
+        throw new IllegalArgumentException("Chosen sort method unknown.");
     }
 }

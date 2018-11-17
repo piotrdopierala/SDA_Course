@@ -5,6 +5,9 @@ public class BinaryTreeMain {
         BinaryTreeElement root = BinaryTreeElement.exampleTree();
         System.out.println(root.toFormattedJSON());
         System.out.println("Wysokosc drzewa: " + root.heightOfTree());
+        //root.getPostOrderList();
+
+        root.getPostOrderList().stream().forEach(System.out::println);
 
 
     }

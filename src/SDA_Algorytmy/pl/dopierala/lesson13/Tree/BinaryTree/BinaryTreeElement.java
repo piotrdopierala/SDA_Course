@@ -4,8 +4,9 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-
-import static java.lang.Math.max;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class BinaryTreeElement {
     private Integer data;
@@ -109,6 +110,61 @@ public class BinaryTreeElement {
         return Integer.max(leftHeight,rightHeight)+1;
     }
 
+    public List<Integer> getPreOrderList(){
+        ArrayList<Integer> list = new ArrayList<>();
+        this.addToPreOrderedList(list);
+        return list;
+    }
+
+    public List<Integer> getInOrderList(){
+        ArrayList<Integer> list = new ArrayList<>();
+        this.addToInOrderedList(list);
+        return list;
+    }
+
+    public List<Integer> getPostOrderList(){
+        ArrayList<Integer> list = new ArrayList<>();
+        this.addToPostOrderedList(list);
+        return list;
+    }
+
+    public void addToPreOrderedList(ArrayList<Integer> preOrderList){
+        traversePreOrderList(preOrderList::add);
+    }
+
+    public void addToInOrderedList(ArrayList<Integer> preOrderList){
+        traverseInOrderList(preOrderList::add);
+    }
+
+    public void addToPostOrderedList(ArrayList<Integer> preOrderList){
+        traversePostOrderList(preOrderList::add);
+    }
 
 
+    public void traversePreOrderList(Consumer<Integer> operation){
+        operation.accept(this.getData());
+        if(leftElement!=null)
+            leftElement.traversePreOrderList(operation);
+        if(rightElement!=null)
+            rightElement.traversePreOrderList(operation);
+    }
+
+    public void traverseInOrderList(Consumer<Integer> operation){
+        if(leftElement!=null) {
+            leftElement.traverseInOrderList(operation);
+        }
+        operation.accept(this.getData());
+        if(rightElement!=null)
+            rightElement.traverseInOrderList(operation);
+    }
+
+    public void traversePostOrderList(Consumer<Integer> operation){
+        if(leftElement!=null) {
+            leftElement.traversePostOrderList(operation);
+        }
+        if(rightElement!=null) {
+            rightElement.traversePostOrderList(operation);
+        }
+        operation.accept(this.getData());
+    }
 }

@@ -9,7 +9,6 @@ public class BinaryTreeMain {
 
         root.getPostOrderList().stream().forEach(System.out::println);
 
-
     }
 
     public static void printTree(BinaryTreeElement root) {

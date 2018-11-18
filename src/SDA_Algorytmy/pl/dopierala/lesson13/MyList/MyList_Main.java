@@ -13,7 +13,7 @@ public class MyList_Main {
                 .add("E3")
                 .add("E4");
 
-        list.insertAfter(list.tail,"Ex");
+        list.insertAfter(list.tail, "Ex");
 
         //list.addFirst(new Element("Ex"));
 

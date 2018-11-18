@@ -1,5 +1,6 @@
 package SDA_Algorytmy.pl.dopierala.Homework_personDB;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Person implements UniqID,Comparable<Person> {
@@ -7,13 +8,16 @@ public class Person implements UniqID,Comparable<Person> {
     private int id;
     private String name;
     private String lastName;
-    private Date birthDate;
+    private LocalDate birthDate;
 
-    public Person(String name, String lastName, Date birthDate) {
+    public Person(String name, String lastName, LocalDate birthDate) {
         this.id=idGenerator++;
         this.name = name;
         this.lastName = lastName;
         this.birthDate = birthDate;
+    }
+
+    private Person() {
     }
 
     public String getName() {
@@ -32,11 +36,11 @@ public class Person implements UniqID,Comparable<Person> {
         this.lastName = lastName;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

@@ -8,10 +8,10 @@ public class QuickSortMain {
         String[] stringArray = {"Zuzanna","Zzuanna","Dorian","Ala","Piotrek",};
 
         //quickSort(intArray,0,intArray.length-1);
-        quickSort(stringArray,0,stringArray.length-1);
-        printArray(stringArray);
-
-
+        while(true) {
+            quickSort(stringArray, 0, stringArray.length - 1);
+            printArray(stringArray);
+        }
     }
 
     public static <T extends Comparable> void quickSort(T[] in,int left, int right){
